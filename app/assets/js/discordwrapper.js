@@ -6,7 +6,7 @@ const {Client} = require('discord-rpc')
 let client
 let activity
 
-exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting for Client..'){
+exports.initRPC = function(genSettings, servSettings, initialDetails = 'Esperando al cliente..'){
     client = new Client({ transport: 'ipc' })
 
     activity = {
@@ -21,7 +21,7 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting 
     }
 
     client.on('ready', () => {
-        logger.log('Discord RPC Connected')
+        logger.log('Discord RPC conectado')
         client.setActivity(activity)
     })
     
