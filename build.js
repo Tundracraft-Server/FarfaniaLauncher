@@ -20,7 +20,7 @@ builder.build({
     config: {
         appId: 'farfanialauncher',
         productName: 'Farfania Launcher',
-        artifactName: '${productName}-setup-${version}.${ext}',
+        artifactName: '${productName}-instalador-${version}.${ext}',
         copyright: 'Copyright © 2020-2020 Chesvin1',
         directories: {
             buildResources: 'build',
@@ -46,10 +46,10 @@ builder.build({
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Daniel Scalzi',
-            vendor: 'Daniel Scalzi',
-            synopsis: 'Modded Minecraft Launcher',
-            description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.',
+            maintainer: 'Chesvin1',
+            vendor: 'Chesvin1',
+            synopsis: 'Launcher de Minecraft Moddeado',
+            description: 'Launcher modificado que permite el acceso a Farfania, las actualizaciones son automaticas.',
             category: 'Game'
         },
         compression: 'maximum',
