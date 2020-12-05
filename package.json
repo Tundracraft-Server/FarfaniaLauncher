@@ -1,11 +1,11 @@
 {
   "name": "farfanialauncher",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "productName": "Farfania Launcher",
   "description": "Launcher para suscriptores de Twitch de Farfadox",
   "author": "Chesvin1 (https://github.com/Chesvin1/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Chesvin1/FarfaniaLauncher",
+  "homepage": "https://github.com/dzcalzi/HeliosLauncher",
   "bugs": {
     "url": "https://github.com/dscalzi/HeliosLauncher/issues"
   },
