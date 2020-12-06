@@ -390,7 +390,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 setOverlayContent(
                     'Error inesperado:<br>Descarga de java fallida',
                     'Hubo un error desconocido, instala java manualmente!',
-                    'I Understand'
+                    'Lo entiendo'
                 )
                 setOverlayHandler(() => {
                     toggleOverlay(false)
