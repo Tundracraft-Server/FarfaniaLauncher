@@ -28,8 +28,8 @@
                     "desc": "Los servidores de Mojang estan caidos o no se pudo conectar!. Podes revisar el estado en <a href=\"https://help.mojang.com/\">el portal de ayuda de Mojang</a>."
                 },
                 "notPaid": {
-                    "title": "Error durante el logueo:<br>Game Not Purchased",
-                    "desc": "La cuenta con la que intentaste ingresar no compro Minecraft!.<br>Podes comprarlo en <a href=\"https://minecraft.net/\">Minecraft.net</a>"
+                    "title": "Error durante el logueo:<br>Minecraft no comprado (Cuenta de Microsoft?)",
+                    "desc": "La cuenta con la que intentaste ingresar no compro Minecraft o es una cuenta de Microsoft.<br>Podes comprarlo en <a href=\"https://minecraft.net/\">Minecraft.net</a>"
                 },
                 "unknown": {
                     "title": "Error durante el logueo:<br>Error desconocido."
