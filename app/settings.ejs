@@ -12,7 +12,7 @@
                     <button class="settingsNavItem" rSc="settingsTabJava">Java</button>
                     <button class="settingsNavItem" rSc="settingsTabLauncher">Launcher</button>
                     <div class="settingsNavSpacer"></div>
-                    <button class="settingsNavItem" rSc="settingsTabAbout">Acerca de</button>
+                    <button class="settingsNavItem" rSc="settingsTabAbout">Informacion</button>
                     <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">Actualizaciones</button>
                     <div id="settingsNavContentBottom">
                         <div class="settingsNavDivider"></div>
@@ -205,6 +205,9 @@
                         <input class="settingsFileSelVal" id="settingsJavaExecVal" type="text" value="null" cValue="JavaExecutable" disabled>
                         <button class="settingsFileSelButton" id="settingsJavaExecSel" dialogTitle="Select Java Executable" dialogDirectory="false">Elegir archivo</button>
                     </div>
+                <div>
+                    <button id="settingsJavaFileSystemButton">Abrir directorio de Java </button>
+                </div>
                 </div>
                 <div class="settingsFileSelDesc">Java es validado antes de lanzar el juego. <strong>Requiere Java 8 x64.</strong><br>El path deberia terminar en <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.</div>
             </div>

@@ -1201,7 +1201,7 @@ function populateVersionInformation(version, valueElement, titleElement, checkEl
         titleElement.style.color = '#ff886d'
         checkElement.style.background = '#ff886d'
     } else {
-        titleElement.innerHTML = 'Release estable'
+        titleElement.innerHTML = 'Release estable - Copyright © 2020-2020 Chesvin1'
         titleElement.style.color = null
         checkElement.style.background = null
     }
