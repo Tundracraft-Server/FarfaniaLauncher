@@ -525,12 +525,12 @@ function dlAsync(login = true){
     })
     aEx.on('error', (err) => {
         loggerLaunchSuite.error('Error durante el lanzamiento', err)
-        showLaunchFailure('Error durante el lanzamiento', err.message || 'Revisa la consola (CTRL + Shift + i) para mas detalles y reportalo a Chesvin1!.')
+        showLaunchFailure('Error durante el lanzamiento', err.message || 'Revisa la consola (CTRL + i) para mas detalles y reportalo a Chesvin1!.')
     })
     aEx.on('close', (code, signal) => {
         if(code !== 0){
             loggerLaunchSuite.error(`AssetExec exited with code ${code}, assuming error.`)
-            showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola (CTRL + Shift + i) para mas detalles y reportalo a Chesvin1!')
+            showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola (CTRL + i) para mas detalles y reportalo a Chesvin1!')
         }
     })
 
@@ -620,7 +620,7 @@ function dlAsync(login = true){
                     } else {
                         showLaunchFailure(
                             'Error de descarga',
-                            'Revisa la consola (CTRL + Shift + i) para mas detalles. Intentalo de nuevo.'
+                            'Revisa la consola (CTRL + i) para mas detalles. Intentalo de nuevo.'
                         )
                     }
 
@@ -639,7 +639,7 @@ function dlAsync(login = true){
                 loggerLaunchSuite.error('Error durante la validacion:', m.result)
 
                 loggerLaunchSuite.error('Error durante la validacion', m.result.error)
-                showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola para mas detalles (CTRL + Shift + i)')
+                showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola para mas detalles (CTRL + i)')
 
                 allGood = false
             }
@@ -726,7 +726,7 @@ function dlAsync(login = true){
                 } catch(err) {
 
                     loggerLaunchSuite.error('Error durante el lanzamiento', err)
-                    showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola para mas detalles (CTRL + Shift + i)')
+                    showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola para mas detalles (CTRL + i)')
 
                 }
             }
