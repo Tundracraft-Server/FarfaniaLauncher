@@ -18,10 +18,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'farfanialauncher',
-        productName: 'Farfania Launcher',
+        appId: 'tundracraftlauncher',
+        productName: 'Tundracraft Launcher',
         artifactName: '${productName}-instalador-${version}.${ext}',
-        copyright: 'Copyright © 2020-2020 Chesvin1',
+        copyright: 'Copyright © 2020-2021 Amgelo/Chesvin1',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -46,10 +46,10 @@ builder.build({
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Chesvin1',
-            vendor: 'Chesvin1',
-            synopsis: 'Launcher de Minecraft Moddeado',
-            description: 'Launcher modificado que permite el acceso a Farfania, las actualizaciones son automaticas.',
+            maintainer: 'Amgelo',
+            vendor: 'Amgelo',
+            synopsis: 'Launcher de Minecraft Modificado',
+            description: 'Launcher modificado que permite el acceso a Tundracraft, las actualizaciones son automaticas.',
             category: 'Game'
         },
         compression: 'maximum',
