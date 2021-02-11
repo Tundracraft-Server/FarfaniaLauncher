@@ -26,9 +26,9 @@ window.eval = global.eval = function () {
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
-    console.log('%cLa consola es oscura y llena de terrores.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
-    console.log('%cSi alguien te dijo que pegues algo aca, no le des bola.', 'font-size: 16px')
-    console.log('%cA menos que Chesvin1 te lo haya dicho xd.', 'font-size: 16px')
+    console.log('%cLa consola es oscura y llena de horrores.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
+    console.log('%cSi alguien te dijo que pongas algo aca, no le des bola.', 'font-size: 16px')
+    console.log('%cA menos que Amgelo o damots te lo haya dicho xd.', 'font-size: 16px')
 })
 
 // Disable zoom, needed for darwin.
@@ -48,14 +48,14 @@ if(!isDev){
                 loggerAutoUpdaterSuccess.log('Nueva actualizacion disponible', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/Chesvin1/FarfaniaLauncherLauncher/releases/download/v${info.version}/farfanialauncher-setup-${info.version}.dmg`
+                    info.darwindownload = `https://github.com//Tundracraft-Server/TundracraftLauncher/releases/download/v${info.version}/tundracraftlauncher-setup-${info.version}.dmg`
                     showUpdateUI(info)
                 }
                 
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Actualizar ' + info.version + ' listo para ser instalado.')
+                loggerAutoUpdaterSuccess.log('Actualizacion ' + info.version + ' lista para ser instalada.')
                 settingsUpdateButtonStatus('Instalar ahora', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')

@@ -328,12 +328,12 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Show this information to the user.
                 setOverlayContent(
                     'No se encontro<br>una instalacion de Java compatible',
-                    'Para entrar a Farfania, necesitas una instalacion de 64 bits de java 8. Queres que te instalemos una copia? Al instalar, aceptas <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">los terminos y condiciones de Oracle.</a>.',
-                    'Instalar java',
+                    'Para entrar a Tundracraft, necesitas una instalacion de 64 bits de Java 8. Quieres que te instalemos una copia? Al instalar, aceptas <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">los terminos y condiciones de Oracle.</a>.',
+                    'Instalar Java',
                     'Instalar manualmente'
                 )
                 setOverlayHandler(() => {
-                    setLaunchDetails('Preparando descarga de java..')
+                    setLaunchDetails('Preparando descarga de Java..')
                     sysAEx.send({task: 'changeContext', class: 'AssetGuard', args: [ConfigManager.getCommonDirectory(),ConfigManager.getJavaExecutable()]})
                     sysAEx.send({task: 'execute', function: '_enqueueOpenJDK', argsArr: [ConfigManager.getDataDirectory()]})
                     toggleOverlay(false)
@@ -343,7 +343,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                         //$('#overlayDismiss').toggle(false)
                         setOverlayContent(
                             'Java es requerido<br>para abrir el juego',
-                            'Una instalacion valida de java es requerida.',
+                            'Una instalacion valida de Java es requerida.',
                             'Lo entiendo',
                             'Volver atras'
                         )
@@ -380,7 +380,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result === true){
 
                 // Oracle JRE enqueued successfully, begin download.
-                setLaunchDetails('Descargando java..')
+                setLaunchDetails('Descargando Java..')
                 sysAEx.send({task: 'execute', function: 'processDlQueues', argsArr: [[{id:'java', limit:1}]]})
 
             } else {
@@ -388,8 +388,8 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Oracle JRE enqueue failed. Probably due to a change in their website format.
                 // User will have to follow the guide to install Java.
                 setOverlayContent(
-                    'Error inesperado:<br>Descarga de java fallida',
-                    'Hubo un error desconocido, instala java manualmente!',
+                    'Error inesperado:<br>Descarga de Java fallida',
+                    'Hubo un error desconocido, instala Java manualmente!',
                     'Lo entiendo'
                 )
                 setOverlayHandler(() => {
@@ -659,7 +659,7 @@ function dlAsync(login = true){
                 const onLoadComplete = () => {
                     toggleLaunchArea(false)
                     if(hasRPC){
-                        DiscordWrapper.updateDetails('Loading game..')
+                        DiscordWrapper.updateDetails('Cargando juego..')
                     }
                     proc.stdout.on('data', gameStateChange)
                     proc.stdout.removeListener('data', tempListener)
@@ -686,9 +686,9 @@ function dlAsync(login = true){
                 const gameStateChange = function(data){
                     data = data.trim()
                     if(SERVER_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('En la aduana...')
+                        DiscordWrapper.updateDetails('Explorando el mundo')
                     } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Laburando en el pais')
+                        DiscordWrapper.updateDetails('Jugando en Tundracraft')
                     }
                 }
 
@@ -708,7 +708,7 @@ function dlAsync(login = true){
                     proc.stdout.on('data', tempListener)
                     proc.stderr.on('data', gameErrorListener)
 
-                    setLaunchDetails('Listo. Disfruta de Farfania!')
+                    setLaunchDetails('Listo. Disfruta de Tundracraft!')
 
                     // Init Discord Hook
                     const distro = DistroManager.getDistribution()
@@ -716,7 +716,7 @@ function dlAsync(login = true){
                         DiscordWrapper.initRPC(distro.discord, serv.discord)
                         hasRPC = true
                         proc.on('close', (code, signal) => {
-                            loggerLaunchSuite.log('Shutting down Discord Rich Presence..')
+                            loggerLaunchSuite.log('Apagando Discord Rich Presence..')
                             DiscordWrapper.shutdownRPC()
                             hasRPC = false
                             proc = null
