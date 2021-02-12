@@ -968,9 +968,9 @@ settingsMinRAMRange.onchange = (e) => {
     const max = (os.totalmem()-1000000000)/1000000000
 
     // Change range bar color based on the selected value.
-    if(sMinV >= max/2){
+    if(sMinV >= max/1.5){
         bar.style.background = '#e86060'
-    } else if(sMinV >= max/4) {
+    } else if(sMinV >= max/2) {
         bar.style.background = '#e8e18b'
     } else {
         bar.style.background = null
@@ -1000,9 +1000,9 @@ settingsMaxRAMRange.onchange = (e) => {
     const max = (os.totalmem()-1000000000)/1000000000
 
     // Change range bar color based on the selected value.
-    if(sMaxV >= max/2){
+    if(sMaxV >= max/1.5){
         bar.style.background = '#e86060'
-    } else if(sMaxV >= max/4) {
+    } else if(sMaxV >= max/2) {
         bar.style.background = '#e8e18b'
     } else {
         bar.style.background = null
