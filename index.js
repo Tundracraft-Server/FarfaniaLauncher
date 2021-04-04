@@ -97,6 +97,8 @@ function createWindow() {
     win = new BrowserWindow({
         width: 980,
         height: 552,
+        minWidth: 600,
+        minHeight: 350,
         icon: getPlatformIcon('SealCircle'),
         frame: false,
         webPreferences: {
@@ -106,7 +108,7 @@ function createWindow() {
             enableRemoteModule: true,
             worldSafeExecuteJavaScript: true
         },
-        backgroundColor: '#171614'
+        backgroundColor: '#151714'
     })
 
     ejse.data('bkid', Math.floor((Math.random() * fs.readdirSync(path.join(__dirname, 'app', 'assets', 'images', 'backgrounds')).length)))

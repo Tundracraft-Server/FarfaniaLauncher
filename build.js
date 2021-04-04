@@ -21,7 +21,7 @@ builder.build({
         appId: 'tundracraftlauncher',
         productName: 'Tundracraft Launcher',
         artifactName: '${productName}-instalador-${version}.${ext}',
-        copyright: 'Copyright © 2020-2021 Amgelo/Chesvin1',
+        copyright: 'Copyright © 2020-2021 Amgelo563/damots02',
         directories: {
             buildResources: 'build',
             output: 'dist'
