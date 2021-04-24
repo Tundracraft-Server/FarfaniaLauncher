@@ -235,7 +235,7 @@ loginButton.addEventListener('click', () => {
     loginLoading(true)
 
     if(loginPassword.value === '' && !validUsername.test(loginUsername.value)){
-        setOverlayContent('Usuario crackeado', 'Necesitas poner un nombre de usuario valido', 'Okay')
+        setOverlayContent('Usuario crackeado', 'Necesitas poner un nombre de usuario válido', 'Okay')
         setOverlayHandler(() => {
             formDisabled(false)
             toggleOverlay(false)
@@ -276,7 +276,7 @@ loginButton.addEventListener('click', () => {
             toggleOverlay(false)
         })
         toggleOverlay(true)
-        loggerLogin.log('Error durante la autentificacion.', err)
+        loggerLogin.log('Error durante la autentificación.', err)
     })
 
 })

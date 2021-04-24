@@ -359,8 +359,8 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    'Advertencia<br>Esta es tu ultima cuenta',
-                    'Para poder usar el Launcher, debes estar con al menos una cuenta. Tendras que acceder otra vez con una cuenta luego.<br><br>Estas seguro que queres salir?',
+                    'Advertencia<br>Esta es tu última cuenta',
+                    'Para poder usar el Launcher, debes estar con al menos una cuenta. Tendrás que acceder otra vez con una cuenta luego.<br><br>¿Estás seguro que quieres salir?',
                     'Estoy seguro',
                     'Cancelar'
                 )
@@ -695,7 +695,7 @@ function bindDropinModsRemoveButton(){
             } else {
                 setOverlayContent(
                     `Fallo al intentar eliminar<br>el mod ${fullName}`,
-                    'Asegurate que el mod no esta en uso!',
+                    'Asegúrate que el mod no está en uso!',
                     'Okay'
                 )
                 setOverlayHandler(null)
@@ -749,7 +749,7 @@ function saveDropinModConfiguration(){
                 DropinModUtil.toggleDropinMod(CACHE_SETTINGS_MODS_DIR, dropin.fullName, dropinUIEnabled).catch(err => {
                     if(!isOverlayVisible()){
                         setOverlayContent(
-                            'Fallo al intentar activar<br>uno o mas mods',
+                            'Fallo al intentar activar<br>uno o más mods',
                             err.message,
                             'Okay'
                         )
@@ -1146,7 +1146,7 @@ function populateJavaExecDetails(execPath){
                 settingsJavaExecDetails.innerHTML = `Seleccionado: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})`
             }
         } else {
-            settingsJavaExecDetails.innerHTML = 'Seleccion invalida'
+            settingsJavaExecDetails.innerHTML = 'Selección invalida'
         }
     })
 }
@@ -1240,7 +1240,7 @@ function populateReleaseNotes(){
         },
         timeout: 2500
     }).catch(err => {
-        settingsAboutChangelogText.innerHTML = 'Fallo al cargar las notas de actualizacion.'
+        settingsAboutChangelogText.innerHTML = 'Fallo al cargar las notas de actualización.'
     })
 }
 
@@ -1302,7 +1302,7 @@ function populateSettingsUpdateInformation(data){
             settingsUpdateButtonStatus('Descargando...', true)
         }
     } else {
-        settingsUpdateTitle.innerHTML = 'Estas en la version mas reciente'
+        settingsUpdateTitle.innerHTML = 'Estás en la versión mas reciente'
         settingsUpdateChangelogCont.style.display = 'none'
         populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
         settingsUpdateButtonStatus('Revisar si hay actualizaciones', false, () => {

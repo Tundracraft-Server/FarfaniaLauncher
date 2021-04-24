@@ -45,7 +45,7 @@ if(!isDev){
                 settingsUpdateButtonStatus('Revisando si hay actualizaciones..', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('Nueva actualizacion disponible', info.version)
+                loggerAutoUpdaterSuccess.log('Nueva actualización disponible', info.version)
                 
                 if(process.platform === 'darwin'){
                     info.darwindownload = `https://github.com//Tundracraft-Server/TundracraftLauncher/releases/download/v${info.version}/tundracraftlauncher-setup-${info.version}.dmg`
@@ -55,7 +55,7 @@ if(!isDev){
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Actualizacion ' + info.version + ' lista para ser instalada.')
+                loggerAutoUpdaterSuccess.log('Actualización ' + info.version + ' lista para ser instalada.')
                 settingsUpdateButtonStatus('Instalar ahora', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
@@ -64,7 +64,7 @@ if(!isDev){
                 showUpdateUI(info)
                 break
             case 'update-not-available':
-                loggerAutoUpdater.log('No se encontro una nueva actualizacion.')
+                loggerAutoUpdater.log('No se encontró una nueva actualización.')
                 settingsUpdateButtonStatus('Revisar si hay actualizaciones')
                 break
             case 'ready':
@@ -76,9 +76,9 @@ if(!isDev){
             case 'realerror':
                 if(info != null && info.code != null){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
-                        loggerAutoUpdater.log('No se encontro ninguna actualizacion adecuada.')
+                        loggerAutoUpdater.log('No se encontró ninguna actualización adecuada.')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No se encontro ninguna actualizacion.')
+                        loggerAutoUpdater.log('No se encontró ninguna actualización.')
                     } else {
                         loggerAutoUpdater.error('Error during update check..', info)
                         loggerAutoUpdater.debug('Error Code:', info.code)

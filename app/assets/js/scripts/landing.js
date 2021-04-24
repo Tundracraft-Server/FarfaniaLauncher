@@ -339,8 +339,8 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // If the result is null, no valid Java installation was found.
                 // Show this information to the user.
                 setOverlayContent(
-                    'No se encontro<br>una instalacion de Java compatible',
-                    'Para entrar a Tundracraft, necesitas una instalacion de 64 bits de Java 8. Quieres que te instalemos una copia? Al instalar, aceptas <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">los terminos y condiciones de Oracle.</a>.',
+                    'No se encontró<br>una instalación de Java compatible',
+                    'Para entrar a Tundracraft, necesitas una instalación de 64 bits de Java 8. ¿Quieres que te instalemos una copia? Al instalar, aceptas <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">los términos y condiciones de Oracle.</a>.',
                     'Instalar Java',
                     'Instalar manualmente'
                 )
@@ -355,7 +355,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                         //$('#overlayDismiss').toggle(false)
                         setOverlayContent(
                             'Java es requerido<br>para abrir el juego',
-                            'Una instalacion valida de Java es requerida.',
+                            'Una instalación valida de Java es requerida.',
                             'Lo entiendo',
                             'Volver atras'
                         )
@@ -537,12 +537,12 @@ function dlAsync(login = true){
     })
     aEx.on('error', (err) => {
         loggerLaunchSuite.error('Error durante el lanzamiento', err)
-        showLaunchFailure('Error durante el lanzamiento', err.message || 'Revisa la consola (CTRL + i) para mas detalles y reportalo a Chesvin1!.')
+        showLaunchFailure('Error durante el lanzamiento', err.message || 'Revisa la consola (CTRL + i) para más detalles y repórtalo a Amgelo o a Damots!.')
     })
     aEx.on('close', (code, signal) => {
         if(code !== 0){
             loggerLaunchSuite.error(`AssetExec exited with code ${code}, assuming error.`)
-            showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola (CTRL + i) para mas detalles y reportalo a Chesvin1!')
+            showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola (CTRL + i) para más detalles y reportalo a Amgelo o a Damots!')
         }
     })
 
@@ -554,26 +554,26 @@ function dlAsync(login = true){
                 case 'distribution':
                     setLaunchPercentage(20, 100)
                     loggerLaunchSuite.log('Validated distibution index.')
-                    setLaunchDetails('Cargando informacion de version..')
+                    setLaunchDetails('Cargando información de version..')
                     break
                 case 'version':
                     setLaunchPercentage(40, 100)
-                    loggerLaunchSuite.log('Informacion de version cargada.')
+                    loggerLaunchSuite.log('Información de version cargada.')
                     setLaunchDetails('Validando integridad de archivos..')
                     break
                 case 'assets':
                     setLaunchPercentage(60, 100)
-                    loggerLaunchSuite.log('Validacion de archivos completada')
-                    setLaunchDetails('Validando la integridad de las librerias..')
+                    loggerLaunchSuite.log('Validación de archivos completada')
+                    setLaunchDetails('Validando la integridad de las librerías..')
                     break
                 case 'libraries':
                     setLaunchPercentage(80, 100)
-                    loggerLaunchSuite.log('Validacion de librerias completada.')
+                    loggerLaunchSuite.log('Validación de librerías completada.')
                     setLaunchDetails('Validando archivos miscelaneos..')
                     break
                 case 'files':
                     setLaunchPercentage(100, 100)
-                    loggerLaunchSuite.log('Validacion de archivos completada.')
+                    loggerLaunchSuite.log('Validación de archivos completada.')
                     setLaunchDetails('Descargando archivos..')
                     break
             }
@@ -592,7 +592,7 @@ function dlAsync(login = true){
                     remote.getCurrentWindow().setProgressBar(2)
 
                     // Download done, extracting.
-                    const eLStr = 'Extrayendo librerias...'
+                    const eLStr = 'Extrayendo librerías...'
                     let dotStr = ''
                     setLaunchDetails(eLStr)
                     progressListener = setInterval(() => {
@@ -627,12 +627,12 @@ function dlAsync(login = true){
                     if(m.error.code === 'ENOENT'){
                         showLaunchFailure(
                             'Error de descarga',
-                            'No se pudo conectar al servidor de archivos, asegurate que estas conectado a Internet.'
+                            'No se pudo conectar al servidor remoto de archivos, asegúrate que estas conectado a Internet.'
                         )
                     } else {
                         showLaunchFailure(
                             'Error de descarga',
-                            'Revisa la consola (CTRL + i) para mas detalles. Intentalo de nuevo.'
+                            'Revisa la consola (CTRL + i) para mas detalles. Inténtalo de nuevo.'
                         )
                     }
 
@@ -648,9 +648,9 @@ function dlAsync(login = true){
 
             // If these properties are not defined it's likely an error.
             if(m.result.forgeData == null || m.result.versionData == null){
-                loggerLaunchSuite.error('Error durante la validacion:', m.result)
+                loggerLaunchSuite.error('Error durante la validación:', m.result)
 
-                loggerLaunchSuite.error('Error durante la validacion', m.result.error)
+                loggerLaunchSuite.error('Error durante la validación', m.result.error)
                 showLaunchFailure('Error durante el lanzamiento', 'Revisa la consola para mas detalles (CTRL + i)')
 
                 allGood = false
@@ -666,7 +666,7 @@ function dlAsync(login = true){
                 setLaunchDetails('Lanzando juego..')
 
                 // const SERVER_JOINED_REGEX = /\[.+\]: \[CHAT\] [a-zA-Z0-9_]{1,16} joined the game/
-                const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] ${authUser.displayName} joined the game`)
+                const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] ${authUser.displayName} se ha unido.`)
 
                 const onLoadComplete = () => {
                     toggleLaunchArea(false)
@@ -708,7 +708,7 @@ function dlAsync(login = true){
                     data = data.trim()
                     if(data.indexOf('No se pudo cargar o encontrar el main class net.minecraft.launchwrapper.Launch') > -1){
                         loggerLaunchSuite.error('Descarga del juego fallida, LaunchWrapper no fue descargado exitosamente.')
-                        showLaunchFailure('Error durante el lanzamiento', 'El archivo principal, LaunchWrapper, fallo al descargar. Como resultado, el juego no puede abrirse.<br><br>Para arreglar esto, apaga temporalmente tu antivirus e intentalo otra vez.')
+                        showLaunchFailure('Error durante el lanzamiento', 'El archivo principal, LaunchWrapper, fallo al descargar. Como resultado, el juego no puede abrirse.<br><br>Para arreglar esto, apaga temporalmente tu antivirus e inténtalo otra vez.')
                     }
                 }
 
@@ -752,7 +752,7 @@ function dlAsync(login = true){
     // Begin Validations
 
     // Validate Forge files.
-    setLaunchDetails('Cargando informacion del servidor..')
+    setLaunchDetails('Cargando información del servidor..')
 
     refreshDistributionIndex(true, (data) => {
         onDistroRefresh(data)
@@ -767,7 +767,7 @@ function dlAsync(login = true){
         }, (err) => {
             loggerLaunchSuite.error('Fallo al intentar recargar el distribution index.', err)
             if(DistroManager.getDistribution() == null){
-                showLaunchFailure('Error fatal', 'Fallo al intentar recargar el distribution index!!!!. Contactate con Chesvin1 urgentemente.')
+                showLaunchFailure('Error fatal', 'Fallo al intentar recargar el distribution index!!!!. Contáctate con Amgelo urgentemente.')
 
                 // Disconnect from AssetExec
                 aEx.disconnect()

@@ -19,7 +19,7 @@ const statuses = [
     {
         service: 'authserver.mojang.com',
         status: 'grey',
-        name: 'Autentificacion',
+        name: 'Autentificación',
         essential: true
     },
     {
@@ -31,7 +31,7 @@ const statuses = [
     {
         service: 'api.mojang.com',
         status: 'grey',
-        name: 'API Publica',
+        name: 'API Pública',
         essential: false
     },
     {
@@ -145,7 +145,7 @@ exports.authenticate = function(username, password, clientToken, requestUser = t
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error durante la autentificacion.', error)
+                    logger.error('Error durante la autentificación.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 200){
@@ -179,7 +179,7 @@ exports.validate = function(accessToken, clientToken){
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error durante la validacion.', error)
+                    logger.error('Error durante la validación.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 403){
@@ -214,7 +214,7 @@ exports.invalidate = function(accessToken, clientToken){
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error durante la invalidacion.', error)
+                    logger.error('Error durante la invalidación.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 204){

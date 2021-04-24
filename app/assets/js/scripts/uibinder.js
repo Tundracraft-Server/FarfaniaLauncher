@@ -110,7 +110,7 @@ function showFatalStartupError(){
             document.getElementById('overlayContainer').style.background = 'none'
             setOverlayContent(
                 'Error fatal: Fallo al intentar cargar el distribution index.',
-                'Hubo un fallo de conexion con el servidor de distribucion de Tundracraft. No se pudo descargar ningun archivo!. <br><br>El Distribution index, provee al launcher la informacion acerca de los mods del server. Si quieres una solucion rapida, verifica tu conexion a internet, e intenta reiniciar el launcher.',
+                'Hubo un fallo de conexión con el servidor de distribución de Tundracraft. No se pudo descargar ningun archivo!. <br><br>El Distribution index, provee al launcher la información acerca del server. Si quieres una solucion rápida, verifica tu conexión a internet, e intenta reiniciar el launcher.',
                 'Cerrar'
             )
             setOverlayHandler(() => {

@@ -190,7 +190,7 @@ class Util {
             return false
 
         } catch(err) {
-            throw new Error('La version de Forge es compleja (se modifico).. El launcher requiere un parche!!.')
+            throw new Error('La version de Forge es compleja (se modificó).. ¡El launcher requiere un parche!.')
         }
     }
 
