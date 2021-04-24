@@ -3759,24 +3759,21 @@ input:checked + .toggleSwitchSlider:before {
     height: auto;
 }
 
-/* Rotating image for the spinner. */
+/* Scaling image for the spinner. */
 #loadSpinnerImage {
     width: 280px;
     height: auto;
     z-index: 400;
 }
 
-/* Rotating animation for the spinner. */
-@keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Scaling animation for the spinner. */
+@keyframes scaling {
+    0%  {transform: scale(1.0);}
+    50% {transform: scale(1.22);}
+    100% {transform: scale(1.0);}
 }
 
 /* Class which is applied when the spinner image is spinning. */
-.rotating {
-    animation: rotating 10s linear infinite;
+.scaling {
+    animation: scaling 2s ease-in-out infinite;
 }
