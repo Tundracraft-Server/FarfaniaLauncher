@@ -2915,6 +2915,9 @@ input:checked + .toggleSwitchSlider:before {
 .mediaButton:hover #settingsSVG,
 .mediaButton:focus #settingsSVG,
 .mediaButton:active #settingsSVG {
+    animation-name: loader-spin;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
     height: 23px;
 }
 
