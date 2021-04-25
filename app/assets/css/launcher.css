@@ -2955,6 +2955,15 @@ input:checked + .toggleSwitchSlider:before {
     transition-delay:0s;
 }
 
+/* Link icon colors. */
+#linkSVG:hover,
+#linkURL:focus #linkSVG {
+    fill: #48cae4;
+}
+#linkSVG:active {
+    fill: #48cae4;
+}
+
 /* Trovo icon colors. */
 #trovoSVG:hover,
 #trovoURL:focus #trovoSVG {
