@@ -2952,23 +2952,22 @@ input:checked + .toggleSwitchSlider:before {
     transition-delay:0s;
 }
 
-/* Twitter icon colors. */
-#twitterSVG:hover,
-#twitterURL:focus #twitterSVG {
-    fill: #1da1f2;
+/* Trovo icon colors. */
+#trovoSVG:hover,
+#trovoURL:focus #trovoSVG {
+    fill: #46B86A;
 }
-#twitterSVG:active {
-    fill: #1b8dd4;
+#trovoSVG:active {
+    fill: #46B86A;
 }
 
-/* Instagram icon colors. */
-#instagramSVG:hover,
-#instagramURL:focus #instagramSVG {
-    fill: url('#instaFill')
-    /*fill: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
+/* Twitch icon colors. */
+#twitchSVG:hover,
+#twitchURL:focus #twitchSVG {
+    fill: #8C44F7;
 }
-#instagramSVG:active {
-    fill: url('#instaFill')
+#twitchSVG:active {
+    fill: #8C44F7;
 }
 
 /* Youtube icon colors. */
@@ -2983,10 +2982,10 @@ input:checked + .toggleSwitchSlider:before {
 /* Discord icon colors. */
 #discordSVG:hover,
 #discordURL:focus #discordSVG {
-    fill: #7288d9;
+    fill: #556bbd;
 }
 #discordSVG:active {
-    fill: #657ac4;
+    fill: #556bbd;
 }
 
 /*******************************************************************************
