@@ -3155,6 +3155,7 @@ input:checked + .toggleSwitchSlider:before {
     border: none;
     cursor: pointer;
     outline: none;
+    visibility: hidden;
 }
 #newsButton:hover #newsButtonText,
 #newsButton:focus #newsButtonText {
